@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import KartuSingular from '../../Components/Kartu/KartuSingular/KartuSingular';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import purple from '@material-ui/core/colors/purple';
 
 class Kartu extends Component {
   state = {
@@ -25,9 +27,10 @@ class Kartu extends Component {
     return (
       <div>
         {this.state.Loader ? (
+          //lempar data ke Kartu singular
           <KartuSingular data={this.state.data} />
         ) : (
-          <h1>Loading...</h1>
+          <CircularProgress style={{ marginTop: '200px' }} size={50} />
         )}
       </div>
     );

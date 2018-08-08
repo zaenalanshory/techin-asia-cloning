@@ -21,9 +21,8 @@ class Berita extends Component {
   render() {
     return (
       <Aux>
-        <Header />
         <Grid container spacing={10}>
-          <Grid align="center" item lg={8} xs={12}>
+          <Grid item lg={8} xs={12}>
             <Kartu />
           </Grid>
           <Grid item lg={4} xs={12}>

@@ -1,13 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import Header from './Components/Header/Header';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Berita from './Containers/Berita/Berita';
+import DetailBerita from './Containers/DetailBerita/DetailBerita';
+import Teknologi from './Containers/Teknologi/Teknologi';
+import Bottom from './Components/Bottom/Bottom';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Berita />
+        <Header />
+        <Switch>
+          <Route path="/" exact={true} component={Berita} />
+          <Route path="/DetailBerita" component={DetailBerita} />
+          <Route path="/Teknologi" component={Teknologi} />
+          <Route path="/:slug" component={DetailBerita} />
+        </Switch>
+        <Switch>
+          <Route path="/" component={Bottom} />
+        </Switch>
       </div>
     );
   }
